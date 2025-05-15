@@ -4,6 +4,7 @@ import Making from './Making';
 import Bookingcoffee from './Bookingcoffee';
 import CoffeeDisplay from './CoffeeDisplay';
 import { useLoaderData } from 'react-router';
+import FollowUs from './FollowUs';
 
 const Home = () => {
     const coffeeData = useLoaderData();
@@ -18,7 +19,7 @@ const Home = () => {
                     coffeeData.map((coffee) => <CoffeeDisplay coffee ={coffee} />)
                 }
             </div>
-            
+            <FollowUs/>
         </div>
     );
 };
