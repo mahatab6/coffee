@@ -53,7 +53,7 @@ const CoffeeDisplay = ({coffee}) => {
                     </div>
                     <div className="join join-vertical space-y-2">
                         <Link to={`/coffees/${_id}`}><button className="btn join-item bg-[#D2B48C]"><FaEye  size={25} className='text-white'/></button></Link>
-                        <button className="btn join-item bg-[#5C5B5B]"><MdModeEdit size={25} className='text-white'/></button>
+                        <Link to={`/update/${_id}`}><button className="btn join-item bg-[#5C5B5B]"><MdModeEdit size={25} className='text-white'/></button></Link>
                         <button onClick={() => handleDelete(_id)} className="btn join-item bg-[#EA4744]"><MdDelete size={25} className='text-white' /></button>
                     </div>
                 </div>

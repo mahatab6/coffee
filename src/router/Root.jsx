@@ -3,6 +3,7 @@ import Mainlayout from "./Mainlayout";
 import Home from "../homelayout/Home";
 import Orderpage from "../coffe/Orderpage";
 import DetailsCoffee from "../pages/DetailsCoffee";
+import UpdateCoffee from "../pages/UpdateCoffee";
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,11 @@ export const router = createBrowserRouter([
         {
           path:"/coffees/:id",
           element:<DetailsCoffee/>
+        },
+        {
+          path: "/update/:id",
+          loader: ({params}) => fetch(`http://localhost:5000/coffees/${params.id}`),
+          element:<UpdateCoffee/>
         }
     ]
   },
