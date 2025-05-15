@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { FaArrowLeft } from "react-icons/fa";
+import Swal from 'sweetalert2';
 
 
 const Orderpage = () => {
@@ -20,7 +21,15 @@ const Orderpage = () => {
             body: JSON.stringify(coffeData)
         })
         .then(res => res.json())
-        .then(data => {console.log("after adding data bd " ,data)})
+        .then( data => {
+            if(data.insertedId){
+                Swal.fire({
+                title: "Drag me!",
+                icon: "success",
+                draggable: true
+                });
+            }
+        })
         form.reset();
     }
 
@@ -33,7 +42,7 @@ const Orderpage = () => {
                 <h1 className=' text-4xl'>Add New Coffee</h1>
                 <p className=' text-xl pt-7'>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at <br /> its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed <br /> to using Content here.</p>
             </div>
-            <div className=''>
+            <div className='pb-10'>
                 <form onSubmit={handleform}>
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
                         <fieldset className="fieldset">

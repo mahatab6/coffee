@@ -30,6 +30,7 @@ const DetailsCoffee = () => {
             <div className='md:flex justify-around justify-items-center py-20 items-center bg-amber-200 my-20 rounded-xl'>
                 <img className="w-[250px] h-[355px]" src={photo} alt="" />
                 <div>
+                    <h1 className='text-2xl font-bold pb-5'>Niceties</h1>
                     <h1 className='text-xl font-bold'>Name: {name}</h1>
                     <p className='text-xl font-bold'>Chef: {chef}</p>
                     <p className='text-xl font-bold'>Supplier: {supplier}</p>
