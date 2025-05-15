@@ -12,7 +12,7 @@ const Making = () => {
                     <div className='w-72 p-2 space-y-2'>
                         <img className='w-16 ' src={img1} alt="" />
                         <h1 className=' text-2xl'>Awesome Aroma</h1>
-                        <p className='text-base'>You will definitely be a fan of the design & aroma of your coffee</p>
+                        <p className='text-base '>You will definitely be a fan of the design & aroma of your coffee</p>
                     </div>
                 </div>
                 <div>
