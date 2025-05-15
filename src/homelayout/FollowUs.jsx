@@ -10,7 +10,7 @@ import Rectangle8 from '../assets/images/cups/Rectangle 16.png'
 
 const FollowUs = () => {
     return (
-        <div className='w-10/12 mx-auto'>
+        <div className='w-10/12 mx-auto md:mb-20'>
             <div className='py-20 text-center'>
                 <p className='text-base '>Follow Us Now</p>
                 <h1 className='text-2xl font-bold pt-5'>Follow on Instagram</h1>
