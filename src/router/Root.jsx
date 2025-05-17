@@ -4,8 +4,9 @@ import Home from "../homelayout/Home";
 import Orderpage from "../coffe/Orderpage";
 import DetailsCoffee from "../pages/DetailsCoffee";
 import UpdateCoffee from "../pages/UpdateCoffee";
-import SingUp from "../pages/SingUp";
-import SingIn from "../pages/SingIn";
+import SignIn from "../pages/SignIn";
+import SignUp from "../pages/SingUp";
+
 
 export const router = createBrowserRouter([
   {
@@ -31,12 +32,12 @@ export const router = createBrowserRouter([
           element:<UpdateCoffee/>
         },
         {
-          path: "sing-up",
-          element:<SingUp/>
+          path: "sign-up",
+          element:<SignUp/>
         },
         {
-          path: "sing-in",
-          element:<SingIn/>
+          path: "sign-in",
+          element:<SignIn/>
         }
     ]
   },

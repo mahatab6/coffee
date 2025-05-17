@@ -1,16 +1,37 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router';
+import { AuthContext } from '../context/AuthContext';
+import Swal from 'sweetalert2';
 
-const SingIn = () => {
+const SignIn = () => {
+
+    const {signIn} = useContext(AuthContext);
 
     const handleSingIn = e => {
-
+        e.preventDefault();
+        const form = e.target;   
+        const email = form.email.value;
+        const password = form.password.value;
+        
+        signIn(email, password)
+        .then(result => {
+            console.log(result)
+            Swal.fire({
+                title: "Sing-Up Done!",
+                icon: "success",
+                draggable: true
+                 });
+        })
+        
+    
     }
+
+
 
     return (
        <div className='w-10/12 mx-auto'>
             <div className="w-full max-w-md mx-auto my-20 p-4 rounded-md shadow sm:p-8">
-                <h2 className="mb-3 text-3xl font-semibold text-center">Sing In to your account</h2>
+                <h2 className="mb-3 text-3xl font-semibold text-center">Sign In to your account</h2>
                 <div className="my-6 space-y-4">
                     <button aria-label="Sing up with Google" type="button" className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-600 focus:dark:ring-violet-600">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="w-5 h-5 fill-current">
@@ -39,10 +60,10 @@ const SingIn = () => {
                     </div>
                     <button type="submite" className="w-full px-8 py-3 font-semibold rounded-md bg-amber-500">Sign IN</button>
                 </form>
-                <p className='text-base text-center pt-3'>New here? Create an <Link to="/sing-up" className='text-green-500'>Espresso Emporium account</Link></p>
+                <p className='text-base text-center pt-3'>New here? Create an <Link to="/sign-up" className='text-green-500'>Espresso Emporium account</Link></p>
             </div>
         </div>
     );
 };
 
-export default SingIn;
+export default SignIn;

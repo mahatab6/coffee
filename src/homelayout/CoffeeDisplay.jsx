@@ -7,39 +7,10 @@ import Swal from 'sweetalert2';
 
 
 
-const CoffeeDisplay = ({coffee}) => {
+const CoffeeDisplay = ({coffee ,handleDelete}) => {
     const {name,photo,chef,price,_id,} = (coffee);
 
-    const handleDelete = (_id) => {
-        console.log(_id)
-        Swal.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!"
-        }).then((result) => {
-        if (result.isConfirmed) {
-
-            fetch(`http://localhost:5000/coffees/${_id}`,{
-                method: 'DELETE'
-            })
-            .then(res => res.json())
-            .then(data => {
-                if(data.deletedCount){
-                    Swal.fire({
-                        title: "Deleted!",
-                        text: "Your file has been deleted.",
-                        icon: "success"
-                        });
-                }
-            })
-           
-  }
-});
-    }
+   
 
     return (
         <div className='md:flex items-center gap-5 justify-center bg-yellow-100 md:justify-around rounded-xl'>
