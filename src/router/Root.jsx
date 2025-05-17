@@ -6,6 +6,7 @@ import DetailsCoffee from "../pages/DetailsCoffee";
 import UpdateCoffee from "../pages/UpdateCoffee";
 import SignIn from "../pages/SignIn";
 import SignUp from "../pages/SingUp";
+import PrivateRoot from "./PrivateRoot";
 
 
 export const router = createBrowserRouter([
@@ -20,7 +21,7 @@ export const router = createBrowserRouter([
         },
         {
           path: "coffee-order",
-          element: <Orderpage/>
+          element: <PrivateRoot><Orderpage/></PrivateRoot>
         },
         {
           path:"/coffees/:id",

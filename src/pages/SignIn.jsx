@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../context/AuthContext';
 import Swal from 'sweetalert2';
 
 const SignIn = () => {
 
     const {signIn} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate ();
 
     const handleSingIn = e => {
         e.preventDefault();
@@ -14,13 +16,13 @@ const SignIn = () => {
         const password = form.password.value;
         
         signIn(email, password)
-        .then(result => {
-            console.log(result)
+        .then(() => {
             Swal.fire({
                 title: "Sing-Up Done!",
                 icon: "success",
                 draggable: true
                  });
+            navigate(location?.state || '/')
         })
         
     
