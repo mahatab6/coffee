@@ -25,7 +25,7 @@ const SignUp = () => {
 
             // save userInfo db
 
-            fetch('http://localhost:5000/users',{
+            fetch('https://y-bice-delta.vercel.app/users',{
                 method: 'POST',
                 headers:{
                     'Content-type': 'application/json'

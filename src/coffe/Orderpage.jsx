@@ -12,7 +12,7 @@ const Orderpage = () => {
         const formData = new FormData(form);
         const coffeData = Object.fromEntries(formData.entries())  
 
-        fetch('http://localhost:5000/coffees',{ 
+        fetch('https://y-bice-delta.vercel.app/coffees',{ 
             method: 'POST',
             headers: {
               "content-type": "application/json"

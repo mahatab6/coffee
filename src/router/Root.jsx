@@ -16,7 +16,7 @@ export const router = createBrowserRouter([
     children: [
         {
             index: true,
-            loader: () => fetch('http://localhost:5000/coffees'),
+            loader: () => fetch('https://y-bice-delta.vercel.app/coffees'),
             element: <Home/>
         },
         {
@@ -29,7 +29,7 @@ export const router = createBrowserRouter([
         },
         {
           path: "/update/:id",
-          loader: ({params}) => fetch(`http://localhost:5000/coffees/${params.id}`),
+          loader: ({params}) => fetch(`https://y-bice-delta.vercel.app/coffees/${params.id}`),
           element:<PrivateRoot><UpdateCoffee/></PrivateRoot>
         },
         {

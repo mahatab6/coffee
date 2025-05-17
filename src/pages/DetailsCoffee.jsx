@@ -11,7 +11,7 @@ const DetailsCoffee = () => {
     
     useEffect (() => {
 
-        fetch(`http://localhost:5000/coffees/${id}`)
+        fetch(`https://y-bice-delta.vercel.app/coffees/${id}`)
         .then(res => res.json())
         .then(data => setData(data) )
     }, [id]);
