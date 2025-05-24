@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import { FaArrowLeft } from "react-icons/fa";
 import Swal from 'sweetalert2';
+import axios from 'axios';
 
 
 const Orderpage = () => {
@@ -12,16 +13,11 @@ const Orderpage = () => {
         const formData = new FormData(form);
         const coffeData = Object.fromEntries(formData.entries())  
 
-        fetch('https://y-bice-delta.vercel.app/coffees',{ 
-            method: 'POST',
-            headers: {
-              "content-type": "application/json"
-            },
-            body: JSON.stringify(coffeData)
-        })
-        .then(res => res.json())
-        .then( data => {
-            if(data.insertedId){
+
+
+        axios.post('https://y-bice-delta.vercel.app/coffees', coffeData)
+        .then(data =>{
+            if(data.data.insertedId){
                 Swal.fire({
                 title: "Drag me!",
                 icon: "success",
